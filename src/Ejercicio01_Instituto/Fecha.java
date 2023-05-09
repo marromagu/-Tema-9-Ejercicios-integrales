@@ -10,8 +10,8 @@ import java.util.Calendar;
  *
  * @author JMRivera
  */
-public class Fecha {
-//Se implementará la interfaz Comparable.???????¿¿¿¿¿¿¿¿
+public class Fecha implements Comparable<Fecha>{
+
     private int dia;
     private int mes;
     private int año;
@@ -142,13 +142,23 @@ public class Fecha {
      */
     public int años(Fecha otraFecha) {
         int year = 0;
-        // Añadir código
-        //int años(Fecha otraFecha): devolverá los años enteros transcurridos entre las dos fechas, si la fecha que recibe como parámetro es posterior.
-        if (this.año < otraFecha.año) {
-            year = this.año - otraFecha.año;
+        if (this.año == otraFecha.año) {
+            return year = 0;
         } else {
-            year = otraFecha.año - this.año;
+            if (this.año < otraFecha.año) {
+                year = this.año - otraFecha.año;
+                if (this.mes > otraFecha.mes || this.mes == otraFecha.mes) {
+                    if (this.dia > otraFecha.dia || this.dia == otraFecha.dia) {
+                        return year;
+                    } else {
+                        year--;
+                    }
+                } else {
+                    year--;
+                }
+            }
         }
+
         return year;
     }
 
@@ -158,12 +168,17 @@ public class Fecha {
      * @return Devuelve el número de trienios completos entre el valor de la
      * fecha del objeto y la del recibido como parámetro
      */
-    public int trienios(Fecha otraFecha) {
+        public int trienios(Fecha otraFecha) {
         int trienio = 0;
         // Añadir código
         //int trienios(Fecha otraFecha): devolverá los trienios enteros transcurridos entre las dos fechas, si la fecha que recibe como parámetro es posterior.
         trienio = años(otraFecha);
-        return trienio/3;
+        return trienio / 3;
+    }
+
+    @Override
+    public int compareTo(Fecha o) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

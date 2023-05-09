@@ -17,7 +17,6 @@ public class ExamenJunio {
    */
   public static void main(String[] args) {
     // TODO code application logic here
-    /*
     Instituto instituto = new Instituto("41006900", "Velázquez", "Francisco Carrión Mejías 10", "Sevilla");
     inicio(instituto);
     int opcion = menu();
@@ -76,7 +75,7 @@ public class ExamenJunio {
     p = new Laboral("Administrativo", "Mañana", "9300", "Carmen", f2, f1, 680333111);
     inst.altaEmpleado(p);
     
-    */
+    
     
   }
 }

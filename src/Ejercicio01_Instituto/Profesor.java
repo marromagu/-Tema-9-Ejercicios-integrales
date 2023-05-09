@@ -41,11 +41,12 @@ public abstract class Profesor extends Personal {
         System.out.println("Puesto: " + puesto);
     }
 
-    public void salario(int salario) {
-        salario = 1800;
+    public double salario(int salario) {
+        return salario + 1800;
     }
     public void complementos(){
         //complemento: Si es Director, 800€; Jefe de Estudios, Vicedirector o Secretario, 400€; Jefe de Departamento, 50€; y Tutor, 25€.
+        
     }
 
 }
