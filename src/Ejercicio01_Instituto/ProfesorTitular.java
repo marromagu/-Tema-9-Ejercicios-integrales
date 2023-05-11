@@ -8,13 +8,15 @@ package Ejercicio01_Instituto;
  *
  * @author DAM_T
  */
-public class ProfesorTitular extends Profesor{
+public class ProfesorTitular extends Profesor {
 //Atributo 
+
     private boolean conDestino;
 //Metodos
 
-    public ProfesorTitular(String especialidad, String puesto, String nrp, String nombre, Fecha fechaIngreso, Fecha fechaNacimiento, int telefono) {
+    public ProfesorTitular(boolean conDestino, String especialidad, String puesto, String nrp, String nombre, Fecha fechaIngreso, Fecha fechaNacimiento, int telefono) {
         super(especialidad, puesto, nrp, nombre, fechaIngreso, fechaNacimiento, telefono);
+        this.conDestino = conDestino;
     }
 
     public boolean isConDestino() {
@@ -35,13 +37,15 @@ public class ProfesorTitular extends Profesor{
     public double complemento() {
         //complemento: se sumará al del padre: 50€ por cada trienio; si tiene destino, 300€.
         if (conDestino) {
-            return salario()+300;
+            return salario() + 300;
         }
         return salario();
     }
+
     //trienios
-    @Override
-   public void verDatos(){
-        System.out.println("Profesor titular");
-   }
+    
+    public String verDatos() {
+        String txt = "Profesor titular";
+        return txt;
+    }
 }

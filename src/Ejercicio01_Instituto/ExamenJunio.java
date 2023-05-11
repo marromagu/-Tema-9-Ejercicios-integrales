@@ -4,6 +4,7 @@
  */
 package Ejercicio01_Instituto;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -14,8 +15,9 @@ public class ExamenJunio {
 
   /**
    * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws FileNotFoundException {
     // TODO code application logic here
     Instituto instituto = new Instituto("41006900", "Velázquez", "Francisco Carrión Mejías 10", "Sevilla");
     inicio(instituto);

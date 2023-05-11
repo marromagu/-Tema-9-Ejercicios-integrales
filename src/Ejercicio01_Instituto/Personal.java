@@ -23,14 +23,15 @@ public abstract class Personal {
     this.telefono = telefono;
   }
   
-  public void verDatos() {
+  public String verDatos() {
     StringBuilder sb = new StringBuilder();
     sb.append("\nNRP: ").append(nrp);
     sb.append(" ").append(nombre);
     sb.append("\n").append(fechaIngreso);
     sb.append(" ").append(fechaNacimiento);
     sb.append(" tlf: ").append(telefono);
-    System.out.println(sb.toString());
+
+      return sb.toString();
   }
   /**
    *

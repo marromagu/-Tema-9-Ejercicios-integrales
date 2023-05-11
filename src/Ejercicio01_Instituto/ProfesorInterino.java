@@ -8,8 +8,9 @@ package Ejercicio01_Instituto;
  *
  * @author DAM_T
  */
-public class ProfesorInterino extends Profesor{
- private boolean sustituto;
+public class ProfesorInterino extends Profesor {
+
+    private boolean sustituto;
 
     public ProfesorInterino(boolean sustituto, String especialidad, String puesto, String nrp, String nombre, Fecha fechaIngreso, Fecha fechaNacimiento, int telefono) {
         super(especialidad, puesto, nrp, nombre, fechaIngreso, fechaNacimiento, telefono);
@@ -26,16 +27,17 @@ public class ProfesorInterino extends Profesor{
 
     @Override
     public double salario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return super.salario(0);
     }
 
     @Override
     public double complemento() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0;
     }
-     @Override
-   public void verDatos(){
-        System.out.println("Profesor Interino");
-   }
-    
+
+    public String verDatos() {
+        String txt = "Profesor Interino";
+        return txt;
+    }
+
 }

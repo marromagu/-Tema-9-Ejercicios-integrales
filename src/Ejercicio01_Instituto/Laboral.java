@@ -56,13 +56,19 @@ public class Laboral extends Personal {
             default ->
                 throw new AssertionError();
         }
+            }
 
-    }
 
-    @Override
-    public void verDatos() {
-        System.out.println(categoria);
-        System.out.println(turno);
+    
+    
+    
+    
+    public String verDatos() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Laboral");
+        sb.append("categoria=").append(categoria);
+        sb.append("turno=").append(turno);
+        return sb.toString();
     }
 
 }
