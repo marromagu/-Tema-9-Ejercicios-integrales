@@ -4,13 +4,14 @@
  */
 package Ejercicio01_Instituto;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  *
  * @author JMRivera
  */
-public class Fecha implements Comparable<Fecha>{
+public class Fecha implements Comparable, Serializable{
 
     private int dia;
     private int mes;
@@ -175,9 +176,11 @@ public class Fecha implements Comparable<Fecha>{
         trienio = años(otraFecha);
         return trienio / 3;
     }
-
+// Para comparar las fechas
     @Override
-    public int compareTo(Fecha o) {
+    public int compareTo(Object o) {
+        Fecha otra = (Fecha) o;
+        
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

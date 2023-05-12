@@ -35,7 +35,7 @@ public class ProfesorInterino extends Profesor {
         return 0;
     }
 
-    public String verDatos() {
+    public String verDatos() {//tipo void + super de la clase padre
         String txt = "Profesor Interino";
         return txt;
     }

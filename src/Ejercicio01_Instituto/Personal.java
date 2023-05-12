@@ -4,11 +4,13 @@
  */
 package Ejercicio01_Instituto;
 
+import java.io.Serializable;
+
 /**
  *
  * @author JMRivera
  */
-public abstract class Personal {
+public abstract class Personal implements Serializable{
   private String nrp;
   private String nombre;
   private Fecha fechaIngreso;

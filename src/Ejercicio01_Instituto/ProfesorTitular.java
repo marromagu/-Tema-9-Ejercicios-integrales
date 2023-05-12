@@ -36,6 +36,7 @@ public class ProfesorTitular extends Profesor {
     @Override
     public double complemento() {
         //complemento: se sumará al del padre: 50€ por cada trienio; si tiene destino, 300€.
+        // tienes q crear un objeto tipo fecha llamar a fecha hoy y calcular el trienio depues (conDestino?300:0) utilizar mas veces este operador
         if (conDestino) {
             return salario() + 300;
         }
@@ -44,8 +45,9 @@ public class ProfesorTitular extends Profesor {
 
     //trienios
     
-    public String verDatos() {
+    public String verDatos() {//tiene q ser void 
         String txt = "Profesor titular";
+        super.verDato();
         return txt;
     }
 }

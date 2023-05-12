@@ -63,7 +63,7 @@ public class Laboral extends Personal {
     
     
     
-    public String verDatos() {
+    public String verDatos() {//void + super presonal
         StringBuilder sb = new StringBuilder();
         sb.append("Laboral");
         sb.append("categoria=").append(categoria);

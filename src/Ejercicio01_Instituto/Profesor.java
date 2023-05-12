@@ -42,7 +42,7 @@ public abstract class Profesor extends Personal {
     }
 
     public double salario(int salario) {
-        return salario + 1800;
+        return salario + 1800;// no recibe nada 
     }
     public void complementos(){
         //complemento: Si es Director, 800€; Jefe de Estudios, Vicedirector o Secretario, 400€; Jefe de Departamento, 50€; y Tutor, 25€.

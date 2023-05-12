@@ -4,13 +4,10 @@
  */
 package Ejercicio01_Instituto;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.Reader;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -24,17 +21,14 @@ public class Instituto {
     private String direccion;
     private String ciudad;
     private ArrayList<Personal> plantilla;
-    private Reader laborales;
 
     public Instituto(String codigo, String nombre, String direccion, String ciudad) throws FileNotFoundException {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.ciudad = ciudad;
-        this.plantilla = new ArrayList<Personal>();//creo q no hace falta esto 
-        FileReader laborales = new FileReader("laborales.dat");
-        FileReader interinos = new FileReader("interinos.dat");
-        FileReader titulados = new FileReader("titulados.dat");
+        this.plantilla = new ArrayList<Personal>();
+
     }
 
     public ArrayList<Personal> getPlantilla() {
@@ -154,13 +148,24 @@ public class Instituto {
 //Los métodos void guardarLaborales(), guadarInterinos() y guardarTitulares() que guardarán en su correspondiente archivo, la información del ArrayList (Laborales.dat, Interinos.dat y Titulares.dat).
 
     public void guardarLaborales() throws FileNotFoundException, IOException {
-        for (int i = 0; i < plantilla.size(); i++) {
-            if (plantilla.get(i) instanceof Laboral) {
-               
-                    FileWriter miFichero = new FileWriter("Laborales.dat");
-                    miFichero.write(plantilla.get(i).verDatos());
-               
+        FileOutputStream fichero = null;
+        ObjectOutputStream salida = null;
+        try {
+            fichero = new FileOutputStream("Laboral.dat");
+            salida = new ObjectOutputStream(salida);
+            for (Personal p : plantilla) {
+                if (p instanceof Laboral) {
+                    salida.writeObject(p);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
 
+            try {
+                salida.close();
+                fichero.close();
+            } catch (IOException x) {
             }
         }
     }
